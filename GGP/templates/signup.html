@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block head %}
+{{ super() }}
+<script type="text/javascript" src="{{ url_for('static', filename='js/signup.js') }}"></script>
+{% endblock %}
+
+{% block title %}Sign Up Now{% endblock %}
+
+{% block page_content %}
+<form id="myform" class="form-horizontal signup" method="post" role="form">
+	<fieldset>
+	<!-- username input -->
+	<div  class="form-group">
+		{{ form.username.label(class_="col-md-1 control-label")}}
+		<div id="username" class="col-md-4">
+			{{form.username(class_="form-control",placeholder="Your username (only letters, numbers, dots or underscores)")}}
+			<!--
+			<button id="username_check" name="username_check" value="username_check" class="btn btn-default" type="button">Check Username Avaliability</button> <span id="avamsg"class="inline"></span>
+		-->
+		</div>
+	</div>
+
+	<!-- Security level input
+	<div class="form-group">
+		  <label class="col-md-4 control-label">Security Level</label>  
+			  <div class="col-md-4">
+				<div class="btn-group" data-toggle="buttons">
+					<div>
+				  <label class="seclv btn btn-default">
+				    <input type="radio" name="option" id="option1" autocomplete="off" value=2> Low: 2 Click-points and 2 portfolio images
+				  </label>
+				</div>
+				<div>
+				  <label class="seclv btn btn-default">
+				    <input type="radio" name="option" id="option2" autocomplete="off" checked value=3> Normal: 3 Click-points and 3 portfolio images
+				  </label>
+				</div>
+				<div>
+				  <label class="seclv btn btn-default">
+				    <input type="radio" name="option" autocomplete="off" id="option3" value=4> High: 4 Click-points and 4 portfolio images
+				  </label>
+				</div>
+				</div>
+					 </div>
+	</div>
+	-->
+
+	<!-- test click -->
+	<div class="form-group">
+		<label class="col-md-1 control-label">Click-Square password</label>
+
+		<div class="col-md-5">
+			<img src="{{ url_for('static', filename='images/cat.jpg') }}" id="clickimg1" class="clickimg" alt="Click image">
+			<div id="conta1">
+
+				{% for n in range(1,11) %}
+					<div id="row{{n|string}}" class="roww">
+						{% for i in range(1,11) %}
+							<div class="square squareRow{{i|string}}" data-letter="" data-number=""></div>
+						{% endfor %}
+					</div>
+				{% endfor %}
+				<div id="bar1">
+					{% for i in range(10) %}
+							<div class="rightBarSquare" data-letter=""><span class="rightBarSquareData"></span></div>
+					{% endfor %}
+				</div>
+				<div id="bar2">
+					{% for i in range(10) %}
+							<div class="bottomBarSquare"  data-number=""><span class="bottomBarSquareData"></span></div>
+					{% endfor %}
+				</div>
+
+			</div>
+				  <div style="margin-top:10px">
+			  <label class="btn btn-default btn-file">Upload Image<input id="img_upload1" type="file" style="display: none;" tar="clickimg1"></label>
+			  <button id="start_selection1"  class="btn btn-default" type="button" aria-pressed="false" tar="clickimg1">Start Selection</button>
+			  <button id="click_reset1" type="button" class="btn btn-default" for="clickimg1">Reset</button>
+			  <span id="num_indicattor1"></span>   
+			</div>
+			<span class="help-block">Use the deafault image or upload your own image</span>
+			<span class="help-block">Click Start Selection button and select 3 squares on each image (sequence matters)</span>
+			<span class="help-block">Memorizing the logic when selecting certain squares is actually easier than memorizing the specific locations!!!</span>
+		</div>
+
+		<div class="col-md-5">
+			<img src="{{ url_for('static', filename='images/gd.jpg') }}" class="clickimg" id="clickimg2" alt="Click image">
+			<div id="conta2">
+
+			</div>
+				  <div style="margin-top:10px">
+			  <label class="btn btn-default btn-file">Upload Image<input id="img_upload2" type="file" style="display: none;" tar="clickimg2"></label>
+			  <button id="start_selection2" class="btn btn-default" type="button" data-toggle="button"  aria-pressed="false" tar="clickimg2">Start Selection</button>
+			  <button id="click_reset2" type="button" class="btn btn-default">Reset</button>
+			  <span id="num_indicattor2"></span>   
+			</div>
+		</div>
+
+	</div>
+
+	<!-- portfolio selection-->
+	<div class="form-group">
+		<label class="col-md-1 control-label">Portfolio Password</label>
+	<div class="col-md-8 portdiv">
+		{% for key, imgname in collection %}
+		<div class= "col-lg-2 col-md-2 col-sm-3 col-xs-4">
+			<div class="thumbnail">
+				<div class="caption">
+					<p>{{ key }}</p>
+				</div>
+				<img title="Key: {{ key }}" class="img-responsive" name="{{key}}"src="{{ url_for('static', filename='images/bingimg/'+imgname) }}">
+			</div>
+		</div>
+		{% endfor %}
+		<span class="help-block">Click Start Selection and select 3 images from the album using keyboard</span>
+		<span class="help-block">Sequence doesn't matter. Re-click the key to un-select</span>
+		<button id="shuffle" name="shuffle" class="btn btn-default" type="button" data-toggle="button">Shuffle Album</button>
+		<button id="start_selection3"  class="btn btn-default" type="button" aria-pressed="false">Start Selection</button>
+		<button id="click_reset3" type="button" class="btn btn-default">Reset</button>
+		<span id="port_indicattor"></span>    
+	</div>
+	</div>
+
+	<!-- Button -->
+	<div class="form-group">
+		<label class="col-md-1 control-label"></label>
+		<div class="col-md-8">
+	<span style="display: block">
+        <h2 id="submission"></h2>
+    </span>
+		<button id="signup" name="signup" class="btn-lg btn-primary">Submit</button>
+
+	 </div>
+
+	
+	</div>
+	 </fieldset>
+	 {{ form.hidden_tag() }}
+	</form>
+
+	<!-- modal -->
+	<div tabindex="-1" class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+		<button class="close" type="button" data-dismiss="modal">×</button>
+		<h3 class="modal-title">Heading</h3>
+	</div>
+	<div class="modal-body">
+		
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-danger" data-dismiss="modal">Close</button>
+	</div>
+   </div>
+  </div>
+</div>
+
+{% endblock %}

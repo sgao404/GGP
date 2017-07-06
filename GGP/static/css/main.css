@@ -1,0 +1,193 @@
+.mainlogo {
+			max-width: 760px;
+			max-height: 80px;
+	    	position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -380px;
+			margin-top: -40px;
+}
+
+.test {
+            position: absolute;
+            top: 50%;
+}
+.centerdiv {
+	width: 800px;
+	height: 700px;
+	position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	
+	margin: auto;
+}
+
+.mainbutton {
+	margin: 20px;
+	width: 200px;
+	height: 80px;
+	font-size: 40px;
+}
+
+body {
+	font-family: 'Oswald', sans-serif;
+}
+
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1600px; /* or 950px */
+}
+
+body.modal-open {
+    overflow: visible;
+}
+
+.modal-dialog {
+	width:1200px;
+}
+
+.thumbnail {
+            position: relative;
+            overflow: hidden;
+}
+
+.caption {
+    position:absolute;
+    top:0;
+    right:0;
+    background:rgba(90, 90, 90, 0.37);
+    width:100%;
+    height:100%;
+    padding:2%;
+    text-align: center;
+    color:#fff !important;
+    z-index:2;
+}
+
+.caption p{
+	position: relative;
+	float: left;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 20px;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+.tooltip.right .tooltip-inner {
+    background-color:#ccf3ff;
+    color: #009ccc;
+    text-align: left;
+    font-size: 15px;
+    font-family: 'Oswald', sans-serif;
+}
+.tooltip.right .tooltip-arrow {
+      border-right-color: #ccf3ff !important;
+}
+
+.disabled {
+    z-index: 1000;
+    background-color: lightgrey;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.clickimg {
+    width: 600px;
+    height: 600px;
+}
+
+/* new feature 
+***************
+**************
+*****************/
+#conta1, #conta2 {
+width: 600px;
+height: 600px;
+position: absolute;
+left: 15px;
+top: 0px;
+/*
+background-image: url("../images/cat.jpg");
+background-size: 600px 600px;
+*/
+}
+.roww .square {
+float: left;
+width: 60px;
+height: 60px;
+border: 1px solid black;
+}
+
+#bar1 {
+background-color: #aaaaaa;
+height: 600px;
+width: 60px;
+position: absolute;
+left: 600px;
+}
+
+#bar2 {
+background-color: #aaaaaa;
+height: 60px;
+width: 600px;
+position: absolute;
+top: 600px;
+}
+
+.rightBarSquare, .bottomBarSquare, .tempp{
+width: 60px;
+height: 60px;
+}
+
+.rightBarSquare span, .bottomBarSquare span, .tempp span{
+margin: 0 15px;
+font-size: 55px;
+line-height: 55px;
+text-align: center;
+}
+
+.bottomBarSquare, .temppp {
+float: left;
+}
+
+
+#bar1:hover img{
+display: block;
+}
+
+#bar2:hover img{
+display: block;
+}
+
+#arrowUp img:hover, #arrowDown img:hover, #arrowLeft img:hover, #arrowRight img:hover {
+opacity: 0.5;
+cursor: pointer;
+}
+
+.selectedcell {
+    background-color: blue;
+    opacity: 0.5;
+}

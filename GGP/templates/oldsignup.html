@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block head %}
+{{ super() }}
+<script type="text/javascript" src="{{ url_for('static', filename='js/signup.js') }}"></script>
+{% endblock %}
+
+{% block page_content %}
+<form class="form-horizontal">
+<fieldset>
+
+	<!-- Text input-->
+	<div class="form-group">
+		  <label class="col-md-4 control-label" for="user_nice_name">Username</label> 
+			  <div class="col-md-4">
+					  <input id="user_name" name="user_name" type="text" placeholder="Your Username" class="form-control input-md" required="">
+						  <span class="help-block">We will need a first and last name.</span>
+						  <button id="usernmae_check" name="usernmae_check" class="btn btn-default">Check Username Avaliability</button>  
+							  </div>
+	</div>
+
+	<!-- Security level input-->
+	<div class="form-group">
+		  <label class="col-md-4 control-label" for="userna,e">Security Level</label>  
+			  <div class="col-md-4">
+				<div class="btn-group" data-toggle="buttons">
+					<div>
+				  <label class="btn btn-default">
+				    <input type="radio" name="options" id="option1" autocomplete="off"> Low: 3 Click-points and 3 portfolio images
+				  </label>
+				</div>
+				<div>
+				  <label class="btn btn-default active">
+				    <input type="radio" name="options" id="option2" autocomplete="off" checked> Normal: 5 Click-points and 5 portfolio images
+				  </label>
+				</div>
+				<div>
+				  <label class="btn btn-default">
+				    <input type="radio" name="options" id="option3" autocomplete="off"> High: 7 Click-points and 7 portfolio images
+				  </label>
+				</div>
+				</div>
+						  <span class="help-block">Choose your security level</span>  
+							  </div>
+	</div>
+	<!-- spinimg -->
+	<div class="form-group">
+		  <label class="col-md-4 control-label" for="user_nice_name">Click-point password</label>  
+			  <div class="col-md-4">
+					  <img src="{{ url_for('static', filename='images/test.PNG') }}" class="img-responsive" alt="Click image">
+						  <span class="help-block">Single click the locations you would like to use as your click-point password. You can also upoload your own image as the background image.</span>
+						  <button id="img_upload" name="img_upload" class="btn btn-default">Upload Image</button>
+						  <button id="img_upload" name="img_upload" class="btn btn-default">Start Selection</button>
+						  <button id="click_reset" name="click_reset" class="btn btn-default">Click-points Reset</button>   
+							  </div>
+	</div>
+
+	<div class="form-group">
+		  <label class="col-md-4 control-label" for="user_nice_name">Portfolio creation</label>  
+ 		<div class="col-md-8">
+
+      <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+      	<div class="thumbnail">
+      		<div class="caption">
+                    <p>Q</p>
+            </div>
+            <img title="image1" class="img-responsive" src="//placehold.it/600x350">
+        </div>
+     </div>
+     <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4"><a title="Image 2"><img class="thumbnail img-responsive" src="//placehold.it/600x350"></a></div>
+     <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4"><a title="Image 3"><img class="thumbnail img-responsive" src="//placehold.it/600x350"></a></div>
+     <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4"><a title="Image 4"><img class="thumbnail img-responsive" src="//placehold.it/600x350"></a></div>
+     <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4"><a title="Image 1" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350"></a></div>
+     <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4"><a title="Image 1" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350"></a></div>
+           <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4"><a title="Image 1" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350"></a></div>
+     <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4"><a title="Image 1" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350"></a></div>
+     <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4"><a title="Image 1" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350"></a></div>
+     <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4"><a title="Image 1" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350"></a></div>
+     <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4"><a title="Image 1" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350"></a></div>
+     <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4"><a title="Image 1" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350"></a></div>
+           <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4"><a title="Image 1" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350"></a></div>
+     <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4"><a title="Image 1" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350"></a></div>
+     <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4"><a title="Image 1" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350"></a></div>
+     <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4"><a title="Image 1" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350"></a></div>
+     <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4"><a title="Image 1" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350"></a></div>
+     <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4"><a title="Image 1" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350"></a></div>
+           <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4"><a title="Image 1" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350"></a></div>
+     <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4"><a title="Image 1" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350"></a></div>
+     <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4"><a title="Image 1" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350"></a></div>
+     <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4"><a title="Image 1" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350"></a></div>
+     <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4"><a title="Image 1" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350"></a></div>
+     <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4"><a title="Image 1" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350"></a></div>
+   		<span class="help-block test1">Single click the locations you would like to use as your click-point password. You can also upoload your own image as the background image.</span>
+						  <button id="img_upload" name="img_upload" class="btn btn-default">Start Selection</button>
+						  <button id="click_reset" name="click_reset" class="btn btn-default">Portfolio Reset</button>   
+	</div>
+	</div>
+
+	<!-- Button -->
+	<div class="form-group">
+		  <label class="col-md-4 control-label" for="signup_recruiter"></label>
+			  <div class="col-md-4">
+					    <button id="signup_recruiter" name="signup_recruiter" class="btn-lg btn-primary">Signup</button>
+							  </div>
+	</div>
+
+</fieldset>
+</form>
+
+<div tabindex="-1" class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+		<button class="close" type="button" data-dismiss="modal">×</button>
+		<h3 class="modal-title">Heading</h3>
+	</div>
+	<div class="modal-body">
+		
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-default" data-dismiss="modal">Close</button>
+	</div>
+   </div>
+  </div>
+</div>
+{% endblock %}
